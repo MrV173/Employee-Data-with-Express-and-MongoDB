@@ -1,0 +1,64 @@
+<div class="card w-75 mt-5 m-auto">
+    <div class="card-body">
+      <h3 class="card-title mb-5 text-center">Detail Employee</h3>
+    <% if (!data) { %>
+        <div class="alert alert-danger fw-bold" role="alert">
+            Data Not Found!
+            <br><a href="/employe" class="btn btn-primary"> Back to Employees</a>
+        </div>
+    <% } %>
+        <div class="w-75 m-auto">
+            <div class="row mb-3">
+                <div class="col">Employee ID</div>
+                <div class="col text-end"><%= data.employeeId %></div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">Nama</div>
+                <div class="col text-end"><%= data.nama %></div> 
+            </div>
+            <div class="row mb-3">
+                <div class="col">Mobile Phone</div>
+                <div class="col text-end"><%= data.noHp %></div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">Email</div>
+                <div class="col text-end"><%= data.email %></div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">Jenis Kelamin</div>
+                <div class="col text-end"> <%= data.jenis_kelamin %></div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">Tanggal Lahir</div>
+                <div class="col text-end"><%= data.tanggal_lahir %></div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">Alamat</div>
+                <div class="col text-end"><%= data.alamat %></div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">Status Pernikahan</div>
+                <div class="col text-end"><%= data.status_pernikahan %></div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">Status Karyawan</div>
+                <div class="col text-end"><%= data.status_karyawan %></div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">Jabatan</div>
+                <div class="col text-end"><%= data.posisi %></div>
+            </div>
+            <div class="row mb-3">
+                <div class="col">Tanggal Bergabung</div>
+                <div class="col text-end"><%= data.join_date %></div>
+            </div>
+            <div class="mt-4 mb-3 text-center">
+                <a href="/employe/update/<%= data.nama %>" class="btn btn-primary">Update</a>
+            <form action="/employe?_method=DELETE" method="post" class="d-inline">
+                <input type="hidden" name="nama" value="<%= data.nama %>">
+                <button type="submit" class="btn btn-danger" onclick="return confirm('Are You Sure Want To Delete This Contact?')">Delete</button>
+            </form>
+            </div>   
+        </div>
+    </div>
+  </div>
